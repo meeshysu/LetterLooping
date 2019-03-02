@@ -8,19 +8,23 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Type in something");
             string s = Console.ReadLine().ToLower();
-            string output = "";
+            string endResult = "";
                 for (int i = 0; i < s.Length; i++)
             {
-                output += char.ToUpper(s[i]);
+                endResult += char.ToUpper(s[i]);
 
                 for (int repeat = 0; repeat < i; repeat++)
                 {
-                    output += (s[i]);
+                    endResult += (s[i]);
                 }
-                output += "-";
+                if (i != (s.Length - 1))
+                {
+                    endResult += "-";
+                }
             }
-            string remove = output.Remove(output.Length - 1);
-            Console.WriteLine(remove);
+            
+            Console.WriteLine(endResult);
+            Console.WriteLine("Press enter to exit!");
             Console.ReadLine();
         }
     }
